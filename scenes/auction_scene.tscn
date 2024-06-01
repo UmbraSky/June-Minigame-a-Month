@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://ravnjfyluwwm"]
+[gd_scene load_steps=3 format=3 uid="uid://ravnjfyluwwm"]
+
+[ext_resource type="Script" path="res://scriipts/auction_scene.gd" id="1_w4pmw"]
+[ext_resource type="PackedScene" uid="uid://cdvv24s0wpgmc" path="res://scenes/button.tscn" id="1_wgg7s"]
 
 [node name="AuctionScene" type="Node2D"]
+script = ExtResource("1_w4pmw")
+
+[node name="Button" parent="." instance=ExtResource("1_wgg7s")]
+offset_left = 93.0
+offset_top = -173.0
+offset_right = 209.0
+offset_bottom = -142.0
+text = "AUCTION?????"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackButton" parent="." instance=ExtResource("1_wgg7s")]
+offset_left = -402.0
+offset_top = -77.0
+offset_right = -82.0
+offset_bottom = 82.0
+text = "go back....
+"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvd8vffigk5sj"]
+
+[ext_resource type="PackedScene" uid="uid://cdvv24s0wpgmc" path="res://scenes/button.tscn" id="1_d4alx"]
+[ext_resource type="Script" path="res://scriipts/main_scene.gd" id="1_v75nu"]
+
+[node name="MainScene" type="Node"]
+script = ExtResource("1_v75nu")
+
+[node name="ShopButton" parent="." instance=ExtResource("1_d4alx")]
+offset_left = -241.0
+offset_top = -84.0
+offset_right = -88.0
+offset_bottom = -8.0
+text = "Go to Shop"
+
+[node name="AuctionButton" parent="." instance=ExtResource("1_d4alx")]
+offset_left = 83.0
+offset_top = -87.0
+offset_right = 241.0
+offset_bottom = -10.0
+text = "Go to Auction"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="AuctionButton" to="." method="_on_auction_button_pressed"]

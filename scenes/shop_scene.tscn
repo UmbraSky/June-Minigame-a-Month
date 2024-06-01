@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://tg4lxgm2i0j8"]
+[gd_scene load_steps=3 format=3 uid="uid://tg4lxgm2i0j8"]
+
+[ext_resource type="PackedScene" uid="uid://cdvv24s0wpgmc" path="res://scenes/button.tscn" id="1_fpbeh"]
+[ext_resource type="Script" path="res://scriipts/shop_scene.gd" id="1_ivomw"]
 
 [node name="ShopScene" type="Node2D"]
+script = ExtResource("1_ivomw")
+
+[node name="BackButton" parent="." instance=ExtResource("1_fpbeh")]
+offset_left = 239.0
+offset_top = -28.0
+offset_right = 559.0
+offset_bottom = 131.0
+text = "go back....
+"
+
+[node name="Button" parent="." instance=ExtResource("1_fpbeh")]
+offset_left = -155.0
+offset_top = -190.0
+offset_right = 165.0
+offset_bottom = -31.0
+text = "SHOP"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
